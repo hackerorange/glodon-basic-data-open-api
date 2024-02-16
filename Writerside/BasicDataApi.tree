@@ -2,7 +2,7 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="basic-data-api"
+<instance-profile id="BasicDataApi"
                   name="基础数据管理"
 
                   start-page="api-docs.md">
