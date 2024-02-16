@@ -10,10 +10,16 @@
     <toc-element topic="api-docs.md"/>
     <toc-element topic="API-quickstart.md"/>
     <toc-element topic="API-reference.md">
-        <toc-element topic="MaterialGroups.md">
-            <toc-element topic="Get-MaterialGroups.md"/>
+        <toc-element toc-title="企业级">
+            <toc-element toc-title="材料分组">
+                <toc-element topic="Get-listEnterpriseMaterialGroups.md"/>
+            </toc-element>
+
+            <toc-element toc-title="材料字典"/>s\
         </toc-element>
-        <toc-element topic="Materials.md"/>
-        <toc-element topic="ProjectMaterials.md"/>
+        <toc-element toc-title="项目级">
+            <toc-element toc-title="材料分组"/>
+            <toc-element toc-title="材料字典"/>
+        </toc-element>
     </toc-element>
 </instance-profile>
