@@ -1,0 +1,3 @@
+apis:
+  Writerside/api/material-groups/list.yaml:
+    alias: ""
