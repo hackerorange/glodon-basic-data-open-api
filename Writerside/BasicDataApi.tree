@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="BasicDataApi"
-                  name="基础数据管理"
+                  name="BasicDataApi"
 
                   start-page="api-docs.md">
 

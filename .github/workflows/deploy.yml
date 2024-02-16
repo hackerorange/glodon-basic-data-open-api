@@ -15,7 +15,7 @@ permissions:
 
 env:
   # Name of help module and instance id separated by a slash
-  INSTANCE: Writerside/基础数据管理
+  INSTANCE: Writerside/BasicDataApi
   # Replace HI with the ID of the instance in capital letters
   ARTIFACT: webHelpBasicDataApi2-all
   # Writerside docker image version
