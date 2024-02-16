@@ -13,5 +13,6 @@
         <toc-element topic="MaterialGroups.md">
             <toc-element topic="Get-MaterialGroups.md"/>
         </toc-element>
+        <toc-element topic="Materials.md"/>
     </toc-element>
 </instance-profile>
