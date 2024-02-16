@@ -17,12 +17,12 @@ env:
   # Name of help module and instance id separated by a slash
   INSTANCE: Writerside/BasicDataApi
   # Replace HI with the ID of the instance in capital letters
-  ARTIFACT: webHelpBasicDataApi2-all.zip
+  ARTIFACT: webHelpBasicDataApi2-all
   # Writerside docker image version
   DOCKER_VERSION: 233.14389
   # Add the variable below to upload Algolia indexes
   # Replace HI with the ID of the instance in capital letters
-  ALGOLIA_ARTIFACT: algolia-indexes-BasicDataApi.zip
+#  ALGOLIA_ARTIFACT: algolia-indexes-BasicDataApi
 
 jobs:
   build:
@@ -48,12 +48,12 @@ jobs:
             retention-days: 7
 
       # Add the step below to upload Algolia indexes
-      - name: Upload algolia-indexes
-        uses: actions/upload-artifact@v3
-        with:
-          name: algolia-indexes
-          path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
-          retention-days: 7
+#      - name: Upload algolia-indexes
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: algolia-indexes
+#          path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
+#          retention-days: 7
 
   # Add the job below and artifacts/report.json on Upload documentation step above
   # if you want to fail the build when documentation contains errors
