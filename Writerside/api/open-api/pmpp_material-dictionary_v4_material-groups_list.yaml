@@ -9,7 +9,7 @@ paths:
     get:
       tags: []
       description: com.glodon.cloudt.annotation.mark.OpenApi
-      operationId: dde59a04-5db7-42d1-9226-359dd2d4a506
+      operationId: 2c0c2252-e696-470c-af0b-a3c6144467ac
       parameters:
       - name: keywords
         in: query
@@ -52,7 +52,7 @@ paths:
     get:
       tags: []
       description: com.glodon.cloudt.annotation.mark.OpenApi
-      operationId: a9430263-bdd7-46a8-83bc-8184182b5d0b
+      operationId: d4c09207-fac8-4a83-b877-6d9d96993dec
       parameters:
       - name: keywords
         in: query
@@ -293,18 +293,5 @@ components:
           description: 负差
           type: number
     weighTypeEnum:
-      required:
-      - desc
-      - name
-      - ordinal
+      description: 枚举类型
       type: object
-      properties:
-        desc:
-          description: desc
-          type: string
-        name:
-          description: name
-          type: string
-        ordinal:
-          description: ordinal
-          type: integer
