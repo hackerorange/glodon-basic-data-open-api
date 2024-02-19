@@ -12,11 +12,10 @@
     <toc-element topic="Open-API-reference.md">
         <toc-element toc-title="企业级">
             <toc-element toc-title="材料分组">
-                <toc-element topic="Get-listEnterpriseMaterialGroups.md"/>
             </toc-element>
 
             <toc-element toc-title="材料字典">
-                <toc-element topic="post_pmpp_v4_materials_list-page.md"></toc-element>
+                <toc-element topic="post_pmpp_v4_materials_list-page.md"/>
             </toc-element>
         </toc-element>
         <toc-element toc-title="项目级">
