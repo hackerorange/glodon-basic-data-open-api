@@ -1,0 +1,407 @@
+---
+openapi: 3.0.0
+info:
+  title: 接口文档
+  description: 接口文档
+  version: 4.0.0
+paths:
+  /pmpp/v4/materials/list-page:
+    post:
+      tags: [ ]
+      description: listPage
+      operationId: MaterialOpenApiController#listPage_post
+      parameters:
+        - name: extraFields
+          in: query
+          description: 额外字段集合
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.dto.MaterialQueryDTO'
+        required: true
+      responses:
+        "200":
+          description: 成功时候的返回结果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.model.common.PageBean<com.glodon.cloudt.dictionary.material.dto.MaterialDTO>'
+components:
+  schemas:
+    com.glodon.cloudt.dictionary.material.model.common.PageBean<com.glodon.cloudt.dictionary.material.dto.MaterialDTO>:
+      required:
+        - records
+        - totalCount
+        - totalPage
+        - currentPage
+        - pageSize
+      type: object
+      properties:
+        records:
+          description: 数据集
+          type: array
+          items:
+            $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.dto.MaterialDTO'
+        totalCount:
+          description: 数据总条数
+          type: integer
+        totalPage:
+          description: 总页数
+          type: integer
+        currentPage:
+          description: 当前页数
+          type: integer
+        pageSize:
+          description: 每页数据条数
+          type: integer
+    com.glodon.cloudt.dictionary.material.dto.MaterialDTO:
+      required:
+        - materialGroupId
+        - code
+        - mnemonic
+        - unit
+        - model
+        - fullCode
+        - name
+        - isInvalid
+        - remark
+        - unitText
+        - specification
+        - texture
+        - orderNo
+        - delete
+        - fullPath
+        - previousId
+        - deviationId
+        - projectId
+        - unitConversionList
+        - unitConversions
+        - industryMaterialCode
+        - industryMaterialGroupId
+        - parentCode
+        - materialType
+        - shortName
+        - materialId
+        - industryGroupFullName
+        - matchStatus
+        - materialGroupName
+        - useFlag
+        - unitId
+        - unitPid
+        - standardMaterialCode
+        - standardMaterialGroupId
+        - lastModifyTimestamp
+        - extend
+        - operation
+        - orgId
+        - id
+        - deviationType
+        - deviationPlus
+        - deviationMinus
+        - deviationInfo
+        - weighTypeEnum
+        - categoryId
+        - materialId
+        - isForceUpdate
+        - parentNodeId
+        - modified
+        - success
+      type: object
+      properties:
+        materialGroupId:
+          description: 材料类型唯一编码
+          type: integer
+        code:
+          description: 编码
+          type: string
+        mnemonic:
+          description: 助记符号
+          type: string
+        unit:
+          description: 计量单位
+          type: string
+        model:
+          description: 型号
+          type: string
+        fullCode:
+          description: 全编码
+          type: string
+        name:
+          description: 名称
+          type: string
+        isInvalid:
+          description: 是否废弃
+          type: integer
+        remark:
+          description: 备注
+          type: string
+        unitText:
+          description: 计量单位名称
+          type: string
+        specification:
+          description: 规格
+          type: string
+        texture:
+          description: 材质
+          type: string
+        orderNo:
+          description: 排序
+          type: integer
+        delete:
+          description: 是否删除
+          type: boolean
+        fullPath:
+          description: 全路径
+          type: string
+        previousId:
+          description: 前一个 ID
+          type: integer
+        deviationId:
+          description: 偏差ID
+          type: integer
+        projectId:
+          description: 项目ID:项目级有权限新增企业级材料时，记录哪个项目添加的材料
+          type: integer
+        unitConversionList:
+          description: 单位转化列表
+          type: array
+          items:
+            $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.dto.MaterialUnitConversionDTO'
+        unitConversions:
+          description: 单位转化列表
+          type: array
+          items:
+            $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.dto.MaterialUnitConversionDTO'
+        industryMaterialCode:
+          description: 行业材料编码
+          type: string
+        industryMaterialGroupId:
+          description: 行业材料类别ID
+          type: integer
+        parentCode:
+          description: 父节点编码
+          type: string
+        materialType:
+          description: 材料类型：null-默认类型，0-原材，1-半成品
+          type: integer
+        shortName:
+          description: 项目级短名称
+          type: string
+        materialId:
+          description: 材料id
+          type: integer
+        industryGroupFullName:
+          description: 材料类别名称
+          type: string
+        matchStatus:
+          description: 三方匹配状态
+          type: integer
+        materialGroupName:
+          description: 材料类别名称
+          type: string
+        useFlag:
+          description: 是否被使用 0未被使用 1被使用  是否被使用 0未被使用 1被使用
+          type: string
+        unitId:
+          description: 第三方ID
+          type: string
+        unitPid:
+          description: 第三方PID
+          type: string
+        standardMaterialCode:
+          description: 标准材料编码
+          type: string
+        standardMaterialGroupId:
+          description: 标准材料类别ID
+          type: integer
+        lastModifyTimestamp:
+          description: 最后一次修改的时间戳
+          type: integer
+        extend:
+          $ref: "#/components/schemas/java.util.Map<java.lang.String,java.lang.Object>"
+        operation:
+          $ref: '#/components/schemas/java.lang.Object'
+        orgId:
+          description: 机构id
+          type: integer
+        id:
+          description: id 对应数据库表中的主键ID
+          type: integer
+        deviationType:
+          description: 偏差类型
+          type: string
+        deviationPlus:
+          description: 正差
+          type: number
+        deviationMinus:
+          description: 负差
+          type: number
+        deviationInfo:
+          $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.dto.BaseWeighDTO.DeviationInfoDTO'
+        weighTypeEnum:
+          $ref: '#/components/schemas/com.glodon.cloudt.dictionary.material.dto.BaseWeighDTO.WeighTypeEnum'
+        categoryId:
+          description: 类别id
+          type: integer
+        isForceUpdate:
+          description: 是否强制修改
+          type: boolean
+        parentNodeId:
+          description: 父id
+          type: integer
+        modified:
+          description: 是否手动修改后1是0否
+          type: boolean
+        success:
+          description: 是否同步成功
+          type: boolean
+    com.glodon.cloudt.dictionary.material.dto.MaterialUnitConversionDTO:
+      required:
+        - id
+        - materialId
+        - unit
+        - originUnit
+        - unitText
+        - ratio
+        - remark
+        - vendorId
+      type: object
+      properties:
+        id:
+          description: 主键ID
+          type: integer
+        materialId:
+          description: 材料ID
+          type: integer
+        unit:
+          description: 单位
+          type: integer
+        originUnit:
+          description: 转换前
+          type: string
+        unitText:
+          description: 转换后
+          type: string
+        ratio:
+          description: ratio值
+          type: number
+        remark:
+          description: 备注
+          type: string
+        vendorId:
+          description: 供应商id
+          type: integer
+    java.util.Map<java.lang.String,java.lang.Object>:
+      type: object
+    java.lang.Object:
+      type: object
+    com.glodon.cloudt.dictionary.material.dto.BaseWeighDTO.DeviationInfoDTO:
+      required:
+        - deviationType
+        - deviationPlus
+        - deviationMinus
+      type: object
+      properties:
+        deviationType:
+          description: 偏差类型
+          type: string
+        deviationPlus:
+          description: 正差
+          type: number
+        deviationMinus:
+          description: 负差
+          type: number
+    com.glodon.cloudt.dictionary.material.dto.BaseWeighDTO.WeighTypeEnum:
+      required:
+        - desc
+        - name
+        - ordinal
+      type: object
+      properties:
+        desc:
+          description: desc
+          type: string
+        name:
+          description: name
+          type: string
+        ordinal:
+          description: ordinal
+          type: integer
+    com.glodon.cloudt.dictionary.material.dto.MaterialQueryDTO:
+      required:
+        - page
+        - pageSize
+      type: object
+      properties:
+        tenantId:
+          description: 企业id
+          type: integer
+        materialGroupId:
+          description: 材料列表id 材料类别id
+          type: integer
+        keyWord:
+          description: 搜索关键字
+          type: string
+        isInvalid:
+          description: 是否废弃：默认全部
+          type: integer
+        page:
+          description: 页数
+          type: integer
+        pageSize:
+          description: 页大小
+          type: integer
+        includeChild:
+          description: 是否包含子类别 是否包含子
+          type: boolean
+        trdMappingStatus:
+          description: 匹配状态 0：未匹配，1:已匹配 2:全部 三方集成匹配状态 0：未匹配，1:已匹配 2:全部
+          type: integer
+        withExtendInfo:
+          description: 是否包偏差信息，默认false
+          type: boolean
+        includeExtendField:
+          description: 是否包含拓展字段，默认false
+          type: boolean
+        includeDeleted:
+          description: 是否包含删除，默认false 是否包含删除的，默认false
+          type: boolean
+        materialId:
+          description: 材料id
+          type: integer
+        onlyShowUnitMaterial:
+          description: 只展示机组材料，默认false 是否包含删除的，默认false
+          type: boolean
+        withUseInfo:
+          description: 是否包含被第三方使用信息，默认false
+          type: boolean
+        keywordMap:
+          $ref: "#/components/schemas/java.util.Map<?,?>"
+        varietyCode:
+          description: 材料类型编码
+          type: string
+        unit:
+          description: 单位
+          type: string
+        withParticipleQuery:
+          description: 是否分词查询，默认false 是否包偏差信息，默认false
+          type: boolean
+        sortField:
+          description: 排序的字段
+          type: string
+        ascend:
+          description: 升序还是降序
+          type: boolean
+        varietyCodeList:
+          description: 材料类型
+          type: array
+          items:
+            type: string
+    java.util.Map<?,?>:
+      type: object
