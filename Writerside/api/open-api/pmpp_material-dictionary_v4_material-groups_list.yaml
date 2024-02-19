@@ -5,57 +5,100 @@ info:
   description: 接口文档
   version: 4.0.0
 paths:
-  /v4/material-groups/list:
+  /pmpp/material-dictionary/v4/material-groups/list:
     get:
       tags: []
-      description: list
-      operationId: MaterialGroupController#list_get
+      description: com.glodon.cloudt.annotation.mark.OpenApi
+      operationId: dde59a04-5db7-42d1-9226-359dd2d4a506
       parameters:
-        - name: keywords
-          in: query
-          description: 关键字
-          required: false
-          schema:
-            type: string
-        - name: withExtendInfo
-          in: query
-          description: 是否包偏差信息，默认false
-          required: true
-          schema:
-            type: boolean
-        - name: varietyCode
-          in: query
-          description: 类型编码
-          required: false
-          schema:
-            type: string
-        - name: sortField
-          in: query
-          description: 排序字段
-          required: false
-          schema:
-            type: string
-        - name: ascend
-          in: query
-          description: 升序还是降序
-          required: false
-          schema:
-            type: boolean
+      - name: keywords
+        in: query
+        description: 关键字
+        required: false
+        schema:
+          type: string
+      - name: withExtendInfo
+        in: query
+        description: 是否包偏差信息，默认false
+        required: true
+        schema:
+          type: boolean
+      - name: varietyCode
+        in: query
+        description: 类型编码
+        required: false
+        schema:
+          type: string
+      - name: sortField
+        in: query
+        description: 排序字段
+        required: false
+        schema:
+          type: string
+      - name: ascend
+        in: query
+        description: 升序还是降序
+        required: false
+        schema:
+          type: boolean
       responses:
         "200":
           description: 成功时候的返回结果
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JsonResponseOfMaterialGroup'
+                $ref: '#/components/schemas/jsonResult_list_materialGroupDTO'
+  /v4/material-groups/list:
+    get:
+      tags: []
+      description: com.glodon.cloudt.annotation.mark.OpenApi
+      operationId: a9430263-bdd7-46a8-83bc-8184182b5d0b
+      parameters:
+      - name: keywords
+        in: query
+        description: 关键字
+        required: false
+        schema:
+          type: string
+      - name: withExtendInfo
+        in: query
+        description: 是否包偏差信息，默认false
+        required: true
+        schema:
+          type: boolean
+      - name: varietyCode
+        in: query
+        description: 类型编码
+        required: false
+        schema:
+          type: string
+      - name: sortField
+        in: query
+        description: 排序字段
+        required: false
+        schema:
+          type: string
+      - name: ascend
+        in: query
+        description: 升序还是降序
+        required: false
+        schema:
+          type: boolean
+      responses:
+        "200":
+          description: 成功时候的返回结果
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/jsonResult_list_materialGroupDTO'
 components:
   schemas:
-    JsonResponseOfMaterialGroup:
+    jsonResult_list_materialGroupDTO:
       required:
-        - code
-        - message
-        - data
-        - throwable
+      - code
+      - message
+      - data
+      - throwable
       type: object
       properties:
         code:
@@ -68,54 +111,54 @@ components:
           description: 响应数据
           type: array
           items:
-            $ref: '#/components/schemas/MaterialGroup'
+            $ref: '#/components/schemas/materialGroupDTO'
         throwable:
           description: 响应异常
           type: object
-    MaterialGroup:
+    materialGroupDTO:
       required:
-        - id
-        - parentId
-        - code
-        - fullCode
-        - name
-        - remark
-        - orderNo
-        - delete
-        - fullPath
-        - tenantId
-        - orgFullId
-        - level
-        - leafNode
-        - children
-        - dataSource
-        - deviationId
-        - deviationType
-        - deviationPlus
-        - deviationMinus
-        - industryMaterialGroupId
-        - materialCount
-        - unitId
-        - unitPid
-        - trdMapped
-        - category
-        - standard
-        - varietyCode
-        - allowSubordinateManage
-        - operation
-        - orgId
-        - id
-        - deviationType
-        - deviationPlus
-        - deviationMinus
-        - deviationInfo
-        - weighTypeEnum
-        - categoryId
-        - materialId
-        - isForceUpdate
-        - parentNodeId
-        - modified
-        - success
+      - id
+      - parentId
+      - code
+      - fullCode
+      - name
+      - remark
+      - orderNo
+      - delete
+      - fullPath
+      - tenantId
+      - orgFullId
+      - level
+      - leafNode
+      - children
+      - dataSource
+      - deviationId
+      - deviationType
+      - deviationPlus
+      - deviationMinus
+      - industryMaterialGroupId
+      - materialCount
+      - unitId
+      - unitPid
+      - trdMapped
+      - category
+      - standard
+      - varietyCode
+      - allowSubordinateManage
+      - operation
+      - orgId
+      - id
+      - deviationType
+      - deviationPlus
+      - deviationMinus
+      - deviationInfo
+      - weighTypeEnum
+      - categoryId
+      - materialId
+      - isForceUpdate
+      - parentNodeId
+      - modified
+      - success
       type: object
       properties:
         id:
@@ -161,7 +204,7 @@ components:
           description: 子级
           type: array
           items:
-            $ref: '#/components/schemas/MaterialGroup'
+            $ref: '#/components/schemas/materialGroupDTO'
         dataSource:
           description: 是否从企业级选择标识
           type: integer
@@ -205,14 +248,14 @@ components:
           description: 是否允许下级维护
           type: boolean
         operation:
-          $ref: '#/components/schemas/type_e5e9b592ca091115a2ed45d2302022c5'
+          $ref: '#/components/schemas/object'
         orgId:
           description: 机构id
           type: integer
         deviationInfo:
-          $ref: '#/components/schemas/type_c57405f88949640dc87f349eb568a762'
+          $ref: '#/components/schemas/deviationInfoDTO'
         weighTypeEnum:
-          $ref: '#/components/schemas/type_5a9d432c1faa3771432b714e152c9695'
+          $ref: '#/components/schemas/weighTypeEnum'
         categoryId:
           description: 类别id
           type: integer
@@ -231,13 +274,13 @@ components:
         success:
           description: 是否同步成功
           type: boolean
-    type_e5e9b592ca091115a2ed45d2302022c5:
+    object:
       type: object
-    type_c57405f88949640dc87f349eb568a762:
+    deviationInfoDTO:
       required:
-        - deviationType
-        - deviationPlus
-        - deviationMinus
+      - deviationType
+      - deviationPlus
+      - deviationMinus
       type: object
       properties:
         deviationType:
@@ -249,11 +292,11 @@ components:
         deviationMinus:
           description: 负差
           type: number
-    type_5a9d432c1faa3771432b714e152c9695:
+    weighTypeEnum:
       required:
-        - desc
-        - name
-        - ordinal
+      - desc
+      - name
+      - ordinal
       type: object
       properties:
         desc:
