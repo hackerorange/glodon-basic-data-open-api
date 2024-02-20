@@ -11,6 +11,18 @@ paths:
       description: listPage
       operationId: MaterialOpenApiController#listPage_post
       parameters:
+        - name: x-tenant-id
+          in: header
+          description: 租户ID，"x-tenant-id"和"authorization"二选一，优先使用authorization
+          required: false
+          schema:
+            type: integer
+        - name: authorization
+          in: header
+          description: 用户Token，"x-tenant-id"和"authorization"二选一，优先使用authorization
+          required: false
+          schema:
+            type: string
         - name: extraFields
           in: query
           description: 额外字段集合，如果需要返回拓展字段，此值设置为 extend

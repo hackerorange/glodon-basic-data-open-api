@@ -16,6 +16,11 @@ Explain the authentication methods and requirements for accessing the API.
 
 ## Base URL
 
+| 环境              | url |
+|-----------------|-----|
+| geip-fat 环境     | -   |
+| aecloud-test 环境 | -   |
+
 Specify the base URL for making API requests.
 
 If you have more than one environment (production and sandbox) explain the difference and provide links to both.

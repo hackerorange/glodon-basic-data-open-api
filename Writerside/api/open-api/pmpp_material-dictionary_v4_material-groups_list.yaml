@@ -11,6 +11,18 @@ paths:
       description: com.glodon.cloudt.annotation.mark.OpenApi
       operationId: 2c0c2252-e696-470c-af0b-a3c6144467ac
       parameters:
+      - name: x-tenant-id
+        in: header
+        description: 租户ID，"x-tenant-id"和"authorization"二选一，优先使用authorization
+        required: false
+        schema:
+          type: integer
+      - name: authorization
+        in: header
+        description: 用户Token，"x-tenant-id"和"authorization"二选一，优先使用authorization
+        required: false
+        schema:
+          type: string
       - name: keywords
         in: query
         description: 关键字
