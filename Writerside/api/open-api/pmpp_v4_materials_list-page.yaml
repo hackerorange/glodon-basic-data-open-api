@@ -13,7 +13,7 @@ paths:
       parameters:
         - name: extraFields
           in: query
-          description: 额外字段集合
+          description: 额外字段集合，如果需要返回拓展字段，此值设置为 extend
           required: true
           schema:
             type: array
