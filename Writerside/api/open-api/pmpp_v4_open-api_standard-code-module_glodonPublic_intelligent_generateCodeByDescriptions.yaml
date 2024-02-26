@@ -1,0 +1,99 @@
+---
+openapi: 3.0.0
+info:
+  title: 接口文档
+  description: 接口文档
+  version: 4.0.0
+paths:
+  /pmpp/v4/open-api/standard-code-module/glodonPublic/intelligent/generateCodeByDescriptions:
+    post:
+      tags: []
+      description: 根据描述生成代码
+      operationId: 8560d1f8-fed5-4853-8a56-7f5051015d00
+      parameters:
+        - name: productCodeVO
+          in: header
+          description: productCodeVO
+          required: false
+          schema:
+            $ref: '#/components/schemas/productCodeVO'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+        required: true
+      responses:
+        "200":
+          description: 成功时候的返回结果
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/lmmResGenerateResponseDTO'
+  /v4/open-api/standard-code-module/glodonPublic/intelligent/generateCodeByDescriptions:
+    post:
+      tags: []
+      description: 根据描述生成代码
+      operationId: 6382c729-6493-4244-9c70-27062791c9c1
+      parameters:
+        - name: productCodeVO
+          in: header
+          description: productCodeVO
+          required: false
+          schema:
+            $ref: '#/components/schemas/productCodeVO'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+        required: true
+      responses:
+        "200":
+          description: 成功时候的返回结果
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/lmmResGenerateResponseDTO'
+components:
+  schemas:
+    productCodeVO:
+      required:
+        - code
+      type: object
+      properties:
+        code:
+          description: code
+          type: string
+    lmmResGenerateResponseDTO:
+      required:
+        - code
+        - name
+        - unit
+        - specification
+        - texture
+      type: object
+      properties:
+        code:
+          description: 生成的编码
+          type: string
+        name:
+          description: 名称
+          type: string
+        unit:
+          description: 单位
+          type: string
+        specification:
+          description: 规格型号
+          type: string
+        texture:
+          description: 规格型号
+          type: string
