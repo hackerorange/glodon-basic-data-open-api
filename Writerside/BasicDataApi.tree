@@ -29,4 +29,13 @@
             </toc-element>
         </toc-element>
     </toc-element>
+    <toc-element toc-title="模型材料量提取">
+
+        <toc-element topic="material-quantity-extract-docs.md"/>
+        <toc-element toc-title="相关接口">
+            <toc-element topic="post_pmpp_v4_open-api_standard-code-module_glodonPublic_intelligent_generateCodeByDescriptions.md"/>
+        </toc-element>
+
+    </toc-element>
+
 </instance-profile>
